@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/learnWords/static/css/main.00a59d41.css",
+    "main.js": "/learnWords/static/js/main.9d6055e2.js",
+    "index.html": "/learnWords/index.html",
+    "main.00a59d41.css.map": "/learnWords/static/css/main.00a59d41.css.map",
+    "main.9d6055e2.js.map": "/learnWords/static/js/main.9d6055e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00a59d41.css",
+    "static/js/main.9d6055e2.js"
+  ]
+}
