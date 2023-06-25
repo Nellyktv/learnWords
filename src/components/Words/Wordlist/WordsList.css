@@ -1,0 +1,51 @@
+.WordsList{
+   color: rgb(29, 207, 207);
+   display:grid;
+   grid-template-columns: 1fr repeat(4,3fr);
+   width: 40vw;
+  
+}
+
+   .cell{
+      border:1px solid rgb(73, 161, 196);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+   }
+
+
+
+   .name{
+      color: rgb(223, 157, 230);
+   }
+
+
+   .buttonDel{
+      background-color:rgb(190, 110, 134);
+      color: rgb(179, 49, 157); 
+    }
+
+
+    .buttonEdit{
+      background-color: rgb(187, 189, 60);
+      color: rgb(36, 115, 184);
+      
+    }
+
+    .buttonsChange{
+      font-size: 1.3vh;
+      border: 0;
+      border-radius: 30%;
+      min-width: 50px;
+      min-height: 20px;
+      margin: 3px;
+      cursor: pointer;
+    }
+
+    .buttonsChange:hover{
+      color: aqua;
+      border: 1px solid aqua;
+      background-color:rgb(202, 231, 231,0.5);
+    }
+
