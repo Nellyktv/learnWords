@@ -1,0 +1,90 @@
+.buttonCheck{
+    text-align: center;
+    background-color:rgba(127, 60, 133, 0.671);
+    color: white;
+    border-radius: 20%;
+    border-color: rgba(127, 60, 133, 0.671);
+    cursor: pointer;
+    min-height: 40px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 1em;
+       
+}
+
+
+.Card{
+    width: 13vw;
+    height: 30vh;
+    background-color: aliceblue;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10%;
+    
+}
+
+.container-card{
+    margin-top: 3%;
+    margin-left: 3%;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    
+
+}
+
+.wordStyle{
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.transcriptionStyle{
+    font-size:1.3em;
+    color: grey;
+}
+
+.hidden{
+    visibility: hidden;
+
+}
+
+.visibility{
+    visibility: visible;
+}
+
+.nextprevbtn{
+    height: 5vh;
+    width: 10vw;
+    background-color: blueviolet;
+    color: aliceblue;
+    font-style: italic;
+    border-radius: 10%;
+    border: blueviolet;
+    cursor: pointer;
+    margin-top: 20%;
+    
+
+
+}
+
+.nextprevbtn:hover{
+    background-color: aqua;
+}
+
+.next{
+    justify-self: end;
+}
+
+.prev{
+    justify-self: start;
+}
+
+.container_wordbtn{
+
+
+}

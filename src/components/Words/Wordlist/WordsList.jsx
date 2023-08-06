@@ -1,27 +1,59 @@
+import React, { useState } from 'react';
 import './WordsList.css';
 
 
 
+
+
 function WordsList (props) {
-return (
-<div>
+    let [edit,setEdit]=useState(false);
+
+    const handleChange = () => {
+        setEdit(!edit)
+    };
+
+    const{id,russian,transcription,english}=props;
+    if(edit===false){
+
+
+    return(
+        <div>
     
     <div className="WordsList">
-    <div className='cell name'>{props.id}
+    <div className='cell name'>{id}
  </div>
-        <div className='cell'>{props.russian}</div>
-        <div className='cell'>{props.transcription}</div>
-        <div className='cell'>{props.english}</div>
+        <div className='cell'>{russian}</div>
+        <div className='cell'>{transcription}</div>
+        <div className='cell'>{english}</div>
         <div className='cell'>
-            <button className='buttonEdit buttonsChange'>Edit</button>
+            <button className='buttonEdit buttonsChange' onClick={handleChange}>Edit</button>
             <button className='buttonDel buttonsChange'>Delete</button>
             </div>
     </div>
 
 </div>
-
-
-);
+    )
+}
+else{
+return (
+    <div>
+        
+        <div className="WordsList">
+        <div className='cell name'>{id}
+     </div>
+     <input className='cell'/>
+            <input className='cell'/>
+            <input className='cell'/>
+            <div className='cell'>
+                <button className='buttonEdit buttonsChange' onClick={handleChange} >Edit</button>
+                <button className='buttonDel buttonsChange'>Delete</button>
+                </div>
+        </div>
+    
+    </div>
+    
+    
+    );}
 };
 
 export default WordsList;

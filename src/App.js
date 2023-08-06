@@ -1,44 +1,78 @@
 import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import words from './Words.json';
+
+import Words from './components/Words/Words';
+import CardWords from './components/Card/CardWords';
+import Header from './components/Header/Header';
 
 
-// import Test from './components/tests/Test';
-// import Words from './components/Words/Words';
-// import Card from './components/Card/Card';
-// import Button from './components/Button/Button';
-import WordsList from './components/Words/Wordlist/WordsList';
-import words from './wordsList.json'
 
 
 
+export default function App() {
+  return (
 
-function App() {
-  return ( 
-    <div className = "App" > 
-    <div className="WordsList">
-    <div className='cell name'>№
- </div>
-     <div className='cell name'>Слово</div>
-        <div className='cell name'>Транскрипция</div>
-        <div className='cell name'>Перевод</div>
-        <div className='cell name'>
- </div>
- </div>
- {
-      words.map((words) =>
-        <WordsList english = {words.english}
-        transcription = {words.transcription}
-        russian = {words.russian}
-        id = {words.id}
-
-        />
-      )
-    } 
-
-    </div>
+    <Router>
+      <>    
+    <Header></Header>
+      <div>
+        <Routes>
+        <Route path="/" element={<Users />} />
+          <Route path="/wordslist" element={<Words/>} />        
+          <Route path="/cards" element={<CardWords words={words}/>} />   
+        </Routes>
+      </div>
+      </>
+    </Router>
+    
   );
+  
+}
+
+
+function Users() {
 
 }
 
-export default App;
+
+// function About() {
+//   return ( 
+//     <div>{wordsList.map((wordsList) =>
+//   <WordsList english = {wordsList.english}
+//   transcription = {wordsList.transcription}
+//   russian = {wordsList.russian}
+//   id = {wordsList.id}
+//   />
+    
+//     )}
+//   </div>
+//   )
+// }
+
+// function Home() {
+//   return (
+//     <div className='container-card'>{
+//       words.map((words) =>
+//       <Card id={words.id}
+//       word={words.word}
+//       transcription={words.transcription}
+//       translate={words.translate}
+//       />  
+//       )}
+      
+//           </div>
+//   )
+// }
+
+
+
+
+// export default App;
 
 

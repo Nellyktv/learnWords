@@ -1,0 +1,36 @@
+
+.logo{
+    margin-top: 1%;
+    width: 7vw;
+    margin-left: 40%;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+}
+
+.header{
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:1fr;
+    background-color: rgba(0, 0, 255, 0.342);
+    
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 2.5vh;
+    margin-right: 3%;
+    
+}
+
+a:hover{
+    color: rgba(168, 60, 168, 0.705);
+}
+
