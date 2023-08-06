@@ -77,14 +77,10 @@
 }
 
 .next{
-    justify-self: end;
-}
-
-.prev{
     justify-self: start;
 }
 
-.container_wordbtn{
-
-
+.prev{
+    justify-self: end;
 }
+

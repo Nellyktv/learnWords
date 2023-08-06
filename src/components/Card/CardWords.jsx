@@ -25,20 +25,18 @@ export default function Test({words}) {
 
 
     return (
-        <div className='container_wordbtn'>
-
-        <div className='container-card' key={indexCard}>
-        <button className='nextprevbtn next' onClick={prev}>Назад</button>
+        
+        
+        <div className='container-card' key={words[indexCard].id}>
+            <button className='nextprevbtn prev' onClick={prev}>Назад</button>
             <Card id={words[indexCard].id}
             english={words[indexCard].english}
             transcription={words[indexCard].transcription}
             russian={words[indexCard].russian}
             />  
+            <button className='nextprevbtn next' onClick={next}>Вперед</button>
 
-
-                <button className='nextprevbtn prev' onClick={next}>Вперед</button>
-                 </div>
-
+                
                  </div>
 
     )

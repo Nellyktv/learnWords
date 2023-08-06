@@ -13,8 +13,6 @@ import Header from './components/Header/Header';
 
 
 
-
-
 export default function App() {
   return (
 
@@ -23,9 +21,8 @@ export default function App() {
     <Header></Header>
       <div>
         <Routes>
-        <Route path="/" element={<Users />} />
-          <Route path="/wordslist" element={<Words/>} />        
-          <Route path="/cards" element={<CardWords words={words}/>} />   
+        <Route path="/" element={<Words/>} />       
+          <Route path="/card" element={<CardWords words={words}/>} />   
         </Routes>
       </div>
       </>
@@ -36,43 +33,5 @@ export default function App() {
 }
 
 
-function Users() {
-
-}
-
-
-// function About() {
-//   return ( 
-//     <div>{wordsList.map((wordsList) =>
-//   <WordsList english = {wordsList.english}
-//   transcription = {wordsList.transcription}
-//   russian = {wordsList.russian}
-//   id = {wordsList.id}
-//   />
-    
-//     )}
-//   </div>
-//   )
-// }
-
-// function Home() {
-//   return (
-//     <div className='container-card'>{
-//       words.map((words) =>
-//       <Card id={words.id}
-//       word={words.word}
-//       transcription={words.transcription}
-//       translate={words.translate}
-//       />  
-//       )}
-      
-//           </div>
-//   )
-// }
-
-
-
-
-// export default App;
 
 

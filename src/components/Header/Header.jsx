@@ -14,7 +14,6 @@ export default function Navigation() {
       <Link to="/"><img className='logo' src={logo}  alt="logo" /></Link>
         <nav className='navigation'>
               <Link to="/">Main</Link>
-              <Link to="/wordslist">Words</Link>
               <Link to="/card">CardWords</Link>
         </nav>
         </header>
