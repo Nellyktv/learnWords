@@ -7,7 +7,7 @@ export default function Words() {
     return ( 
       <>
       
-      <div className = "App" key={words.id} > 
+      <div className = "App" > 
       <h1 className='title'>Список слов</h1>
       <div className="WordsList">
       <div className='cell name'>№
@@ -19,8 +19,9 @@ export default function Words() {
    </div>
    </div>
    {
-        words.map((words) =>
+        words.map((words,index) =>
           <WordsList 
+          key={index}
           id = {words.id} 
           english = {words.english}
           transcription = {words.transcription}

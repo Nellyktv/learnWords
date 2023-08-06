@@ -27,7 +27,7 @@ export default function Test({words}) {
     return (
         
         
-        <div className='container-card' key={words[indexCard].id}>
+        <div className='container-card' >
             <button className='nextprevbtn prev' onClick={prev}>Назад</button>
             <Card id={words[indexCard].id}
             english={words[indexCard].english}
