@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './WordsList.css';
+import styles from './WordsList.module.css';
+import classNames from 'classnames';
 
 
 
@@ -19,15 +20,15 @@ function WordsList (props) {
     return(
         <div>
     
-    <div className="WordsList">
-    <div className='cell name'>{id}
+    <div className={styles.WordsList}>
+    <div className={classNames(`${styles.cell} ${styles.name}`)}>{id}
  </div>
-        <div className='cell'>{russian}</div>
-        <div className='cell'>{transcription}</div>
-        <div className='cell'>{english}</div>
-        <div className='cell'>
-            <button className='buttonEdit buttonsChange' onClick={handleChange}>Edit</button>
-            <button className='buttonDel buttonsChange'>Delete</button>
+        <div className={styles.cell}>{russian}</div>
+        <div className={styles.cell}>{transcription}</div>
+        <div className={styles.cell}>{english}</div>
+        <div className={styles.cell}>
+            <button className={classNames(`${styles.buttonEdit} ${styles.buttonsChange}`)} onClick={handleChange}>Edit</button>
+            <button className={classNames(`${styles.buttonDel} ${styles.buttonsChange}`)}>Delete</button>
             </div>
     </div>
 
@@ -38,15 +39,15 @@ else{
 return (
     <div>
         
-        <div className="WordsList">
-        <div className='cell name'>{id}
+        <div className={styles.WordsList}>
+        <div className={classNames(`${styles.buttonDel} ${styles.buttonsChange}`)}>{id}
      </div>
-     <input className='cell'/>
-            <input className='cell'/>
-            <input className='cell'/>
-            <div className='cell'>
-                <button className='buttonEdit buttonsChange' onClick={handleChange} >Edit</button>
-                <button className='buttonDel buttonsChange'>Delete</button>
+     <input className={styles.cell}/>
+            <input className={styles.cell}/>
+            <input className={styles.cell}/>
+            <div className={styles.cell}>
+            <button className={classNames(`${styles.buttonEdit} ${styles.buttonsChange}`)} onClick={handleChange}>Edit</button>
+            <button className={classNames(`${styles.buttonDel} ${styles.buttonsChange}`)}>Delete</button>
                 </div>
         </div>
     

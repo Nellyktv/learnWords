@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Card.css';
+import styles from './Card.module.css';
 
 
 
@@ -11,16 +11,16 @@ export default function Card (props) {
         setClickBtn(!clickBtn);
     };
     
-    const selected='hidden';
+    const selected=styles.hidden;
     const { english,transcription,russian}=props;
 
     return (
 
-    <div className='card-container'><div className="Card">
-    <p className='wordStyle'>{english}</p>
-    <p className='transcriptionStyle'>{transcription}</p>
-    <p className={`translateStyle ${clickBtn ? `${selected}` : ''}`}>{russian}</p>
-    <button className= {`buttonCheck ${clickBtn ? `` : `${selected}`}`} onClick={handleChange}>Проверить</button>
+    <div className={styles.cardcontainer}><div className={styles.Card}>
+    <p className={styles.wordStyle}>{english}</p>
+    <p className={styles.transcriptionStyle}>{transcription}</p>
+    <p className={`${styles.translateStyle} ${clickBtn ? `${selected}` : ''}`}>{russian}</p>
+    <button className= {`${styles.buttonCheck} ${clickBtn ? `` : `${selected}`}`} onClick={handleChange}>Проверить</button>
         </div>
         </div>
 

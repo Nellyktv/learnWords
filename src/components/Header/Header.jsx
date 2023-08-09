@@ -1,6 +1,5 @@
-
+import styles from  './Header.module.css';
 import logo from './logo.png'
-import './Header.css';
 import React from "react";
 import {
   Link
@@ -10,9 +9,9 @@ import {
 export default function Navigation() {
     return (
       <>
-      <header className='header'>
-      <Link to="/"><img className='logo' src={logo}  alt="logo" /></Link>
-        <nav className='navigation'>
+      <header className={styles.header}>
+      <Link to="/"><img className={styles.logo} src={logo}  alt="logo" /></Link>
+        <nav className={styles.navigation}>
               <Link to="/">Main</Link>
               <Link to="/card">CardWords</Link>
         </nav>

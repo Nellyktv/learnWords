@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import './Card.css';
 import Card from './Card';
+import styles from './Card.module.css';
+import classNames from 'classnames';
 
-export default function Test({words}) {
+export default function CardWords({words}) {
 
     const [indexCard, setIndexCard] = useState(0);
 
@@ -27,14 +28,14 @@ export default function Test({words}) {
     return (
         
         
-        <div className='container-card' >
-            <button className='nextprevbtn prev' onClick={prev}>Назад</button>
+        <div className={styles.containercard} >
+            <button className={classNames(`${styles.nextprevbtn} ${styles.prev}`)} onClick={prev}>Назад</button>
             <Card id={words[indexCard].id}
             english={words[indexCard].english}
             transcription={words[indexCard].transcription}
             russian={words[indexCard].russian}
             />  
-            <button className='nextprevbtn next' onClick={next}>Вперед</button>
+            <button className={classNames(`${styles.nextprevbtn} ${styles.next}`)} onClick={next}>Вперед</button>
 
                 
                  </div>

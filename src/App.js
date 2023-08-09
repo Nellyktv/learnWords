@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -10,6 +9,7 @@ import Words from './components/Words/Words';
 import CardWords from './components/Card/CardWords';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
+
 
 
 
