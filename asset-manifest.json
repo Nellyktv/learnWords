@@ -1,14 +1,12 @@
 {
   "files": {
-    "main.css": "/learnWords/static/css/main.70176ced.css",
-    "main.js": "/learnWords/static/js/main.f30eaa9e.js",
+    "main.js": "/learnWords/static/js/main.b5d638f2.js",
+    "static/media/NotFoundCat.png": "/learnWords/static/media/NotFoundCat.322a2d2b70841f6d7b8b.png",
     "static/media/logo.png": "/learnWords/static/media/logo.9dccf544692ef06954a0.png",
     "index.html": "/learnWords/index.html",
-    "main.70176ced.css.map": "/learnWords/static/css/main.70176ced.css.map",
-    "main.f30eaa9e.js.map": "/learnWords/static/js/main.f30eaa9e.js.map"
+    "main.b5d638f2.js.map": "/learnWords/static/js/main.b5d638f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.70176ced.css",
-    "static/js/main.f30eaa9e.js"
+    "static/js/main.b5d638f2.js"
   ]
 }
