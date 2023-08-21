@@ -1,6 +1,6 @@
-.buttonCheck{
+.buttonCheck {
     text-align: center;
-    background-color:rgba(127, 60, 133, 0.671);
+    background-color: rgba(127, 60, 133, 0.671);
     color: white;
     border-radius: 20%;
     border-color: rgba(127, 60, 133, 0.671);
@@ -9,11 +9,11 @@
     min-width: 100px;
     text-align: center;
     font-size: 1em;
-       
+
 }
 
 
-.Card{
+.Card {
     width: 13vw;
     height: 30vh;
     background-color: aliceblue;
@@ -23,41 +23,37 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10%;
-    
+
 }
 
-.containercard{
+.containercard {
     margin-top: 3%;
     margin-left: 3%;
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    
+
 
 }
 
-.wordStyle{
+.wordStyle {
     font-size: 2em;
     font-weight: 900;
 }
 
-.transcriptionStyle{
-    font-size:1.3em;
+.transcriptionStyle {
+    font-size: 1.3em;
     color: grey;
 }
 
-.hidden{
-    visibility: hidden;
 
-}
-
-.visibility{
+.visibility {
     visibility: visible;
 }
 
-.nextprevbtn{
+.nextprevbtn {
     height: 5vh;
     width: 10vw;
     background-color: blueviolet;
@@ -67,20 +63,37 @@
     border: blueviolet;
     cursor: pointer;
     margin-top: 20%;
-    
-
 
 }
 
-.nextprevbtn:hover{
+.nextprevbtn:hover {
     background-color: aqua;
 }
 
-.next{
+.next {
     justify-self: start;
 }
 
-.prev{
+.prev {
     justify-self: end;
 }
 
+.newGame {
+    background-color: rgb(46, 179, 46);
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.btnCardsLengthEnd {
+    background-color: gray;
+    height: 5vh;
+    width: 10vw;
+    color: aliceblue;
+    font-style: italic;
+    border-radius: 10%;
+    border: gray;
+    cursor: context-menu;
+    margin-top: 20%;
+    grid-row: 1;
+    grid-column: 3;
+}

@@ -3,21 +3,28 @@ import Card from './Card';
 import styles from './Card.module.css';
 import classNames from 'classnames';
 
+let arr=[];
+
 export default function CardWords({words}) {
 
     const [indexCard, setIndexCard] = useState(0);
-    const [clickBtn, setClickBtn] = useState('false');
+    const [clickBtn, setClickBtn] = useState(true);
+    const[count,setCount]= useState(0);
 
-    const next = () => {
-        if (indexCard === words.length - 1) {
-            setIndexCard(0);
-        } else if (indexCard < words.length - 1) {
+    
+    const [buttonActive,buttonDeactivation]=useState('enable');
+    let disabledBtn = () =>{
+        buttonDeactivation('disable');
+    }
+
+    let next = () => {
+ if (indexCard < words.length - 1) {
             setIndexCard(indexCard + Number(1));
         }
-        setClickBtn('false');
+        setClickBtn(true);
     };
 
-    const prev = () => {
+    let prev = () => {
         if (indexCard === 0) {
             setIndexCard(words.length - 1);
             
@@ -25,25 +32,53 @@ export default function CardWords({words}) {
             setIndexCard(indexCard - 1);
             
             }
-            setClickBtn('false');
+            setClickBtn(true);
     };
 
+
+    const countWords = () => {
+        if (count !== words.length-1) {
+            setCount(count + 1);
+        }
+    };
+
+    const newGame = () =>{
+        setIndexCard(0);
+        setClickBtn(true);
+        arr=[];
+        setCount(0);
+       
+    }
+
+
+
+    let stylePrevBtn = styles.nextprevbtn;
 
     return (
         
         
         <div className={styles.containercard} >
-            <button className={classNames(`${styles.nextprevbtn} ${styles.prev}`)} onClick={prev}>Назад</button>
-            <Card id={words[indexCard].id}
+            
+            {indexCard !== 0 ? 
+            <button className={classNames(`${styles.nextprevbtn} ${styles.prev}`)} onClick={prev}>Назад</button>:''}
+            <Card 
+            id={words[indexCard].id}
             english={words[indexCard].english}
             transcription={words[indexCard].transcription}
             russian={words[indexCard].russian}
             clickBtn = {clickBtn}
             setClickBtn = {setClickBtn}
+            countWords ={countWords}
+            arr={arr} 
+            count={count}
             />  
-            <button className={classNames(`${styles.nextprevbtn} ${styles.next}`)} onClick={next}>Вперед</button>
-
-                
+            
+            {indexCard === words.length-1 ? stylePrevBtn=styles.btnCardsLengthEnd  :''}
+            {indexCard === words.length-1 ? next=disabledBtn :''}
+            
+            <button className={classNames(`${stylePrevBtn} ${styles.next}`)} onClick={next}>Вперед</button>     
+            {indexCard === words.length-1 ?<button className={classNames(`${styles.nextprevbtn} ${styles.newGame}`)} onClick={newGame}>Начать игру заново</button>:''}
+            
                  </div>
 
     )

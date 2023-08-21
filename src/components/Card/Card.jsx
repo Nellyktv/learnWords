@@ -1,28 +1,44 @@
-import React, { useState } from 'react';
+import { useEffect } from 'react';
 import styles from './Card.module.css';
+import words from '../../Words.json';
 
 
 
 export default function Card (props) {
     
-    const { english,transcription,russian,clickBtn,setClickBtn}=props;
+    const {id,english,transcription,russian,clickBtn,setClickBtn,countWords,arr,count} = props;
+
 
     const handleChange = () => {
-        setClickBtn(!clickBtn);
+    setClickBtn(!clickBtn);
+    if(arr.includes(id)){ 
+    }
+    else{
+        arr.push(id); 
+        countWords();
+         
+    } 
         
     };
-    
-    const selected=styles.hidden;
+
+    useEffect(()=>{
+        if(arr.includes(id)){
+            setClickBtn(!clickBtn);            
+        }
+
+    },[id])
+   
 
 
     return (
 
-    <div className={styles.cardcontainer}><div className={styles.Card}>
+    <div><div className={styles.Card}>
     <p className={styles.wordStyle}>{english}</p>
     <p className={styles.transcriptionStyle}>{transcription}</p>
 
-    <p className={`${styles.translateStyle} ${clickBtn ? `${selected}` : ''}`}>{russian}</p>
-    <button className= {`${styles.buttonCheck} ${clickBtn ? `` : `${selected}`}`} onClick={handleChange}>Проверить</button>
+    {!clickBtn ? <p className={styles.translateStyle}>{russian}</p>:
+    <button  className={styles.buttonCheck} onClick={handleChange}>Проверить</button>}
+   <p>Изучено {count} из {words.length}</p>
         </div>
         </div>
 
