@@ -9,7 +9,6 @@
     min-width: 100px;
     text-align: center;
     font-size: 1em;
-
 }
 
 
@@ -23,7 +22,6 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10%;
-
 }
 
 .containercard {
@@ -34,8 +32,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-
-
 }
 
 .wordStyle {
@@ -47,7 +43,6 @@
     font-size: 1.3em;
     color: grey;
 }
-
 
 .visibility {
     visibility: visible;
@@ -63,7 +58,6 @@
     border: blueviolet;
     cursor: pointer;
     margin-top: 20%;
-
 }
 
 .nextprevbtn:hover {

@@ -3,13 +3,14 @@ import Card from './Card';
 import styles from './Card.module.css';
 import classNames from 'classnames';
 
-let arr=[];
+
 
 export default function CardWords({words}) {
 
     const [indexCard, setIndexCard] = useState(0);
     const [clickBtn, setClickBtn] = useState(true);
     const[count,setCount]= useState(0);
+    const [arr,setArr]=useState([]);
 
     
     const [buttonActive,buttonDeactivation]=useState('enable');
@@ -23,8 +24,7 @@ export default function CardWords({words}) {
         }
         setClickBtn(true);
     };
-
-    let prev = () => {
+const prev = () => {
         if (indexCard === 0) {
             setIndexCard(words.length - 1);
             
@@ -70,6 +70,7 @@ export default function CardWords({words}) {
             setClickBtn = {setClickBtn}
             countWords ={countWords}
             arr={arr} 
+            setArr={setArr}
             count={count}
             />  
             

@@ -9,6 +9,8 @@ import Words from './components/Words/Words';
 import CardWords from './components/Card/CardWords';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
+import WordsContext from "./components/Words/Wordlist/wordsContext";
+
 
 
 
@@ -20,11 +22,13 @@ export default function App() {
       <>    
     <Header></Header>
       <div>
+        <WordsContext>
         <Routes>
         <Route path="/" element={<Words/>} />       
           <Route path="/card" element={<CardWords words={words}/>} />   
           <Route path = "*" element = {<NotFound/>}/>
         </Routes>
+        </WordsContext>
       </div>
       </>
     </Router>
