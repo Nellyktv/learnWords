@@ -25,7 +25,7 @@ export default function App() {
         <WordsContext>
         <Routes>
         <Route path="/" element={<Words/>} />       
-          <Route path="/card" element={<CardWords words={words}/>} />   
+          <Route path="/game" element={<CardWords words={words}/>} />   
           <Route path = "*" element = {<NotFound/>}/>
         </Routes>
         </WordsContext>
