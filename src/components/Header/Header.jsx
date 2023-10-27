@@ -13,7 +13,7 @@ export default function Navigation() {
       <Link to="/"><img className={styles.logo} src={logo}  alt="logo" /></Link>
         <nav className={styles.navigation}>
               <Link to="/">Main</Link>
-              <Link to="/card">CardWords</Link>
+              <Link to="/game">Game</Link>
         </nav>
         </header>
         </>
