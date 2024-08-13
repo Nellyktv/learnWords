@@ -3,12 +3,19 @@ Welcome to the Vocabulary Builder project! This is a React-based application des
 
 ## Features
 Word Lists: Explore curated word lists based on various topics and difficulty levels.
+
 Flashcards: Study words using flashcards that display definitions.
+
 Quizzes: Test your knowledge with flashcards.
+
 User-Friendly Interface: Enjoy a sleek and intuitive design that makes learning fun and straightforward.
+
 Technologies Used
+
 React: For building the user interface.
+
 CSS-modules: For styling components.
+
 Local Storage: To save user progress and preferences.
 
 Here you can see a demo version of the application:[https://nellyktv.github.io/learnWords]
