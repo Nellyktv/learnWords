@@ -1,86 +1,77 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Card from './Card';
 import styles from './Card.module.css';
 import classNames from 'classnames';
 
-
-
-export default function CardWords({words}) {
-
+export default function CardWords({ words }) {
     const [indexCard, setIndexCard] = useState(0);
     const [clickBtn, setClickBtn] = useState(true);
-    const[count,setCount]= useState(0);
-    const [arr,setArr]=useState([]);
+    const [count, setCount] = useState(0);
+    const [arr, setArr] = useState([]);
 
-    
-    const [buttonActive,buttonDeactivation]=useState('enable');
-    let disabledBtn = () =>{
-        buttonDeactivation('disable');
-    }
+    const isFirstCard = indexCard === 0;
+    const isLastCard = indexCard === words.length - 1;
 
-    let next = () => {
- if (indexCard < words.length - 1) {
-            setIndexCard(indexCard + Number(1));
+    const next = () => {
+        if (!isLastCard) {
+            setIndexCard(indexCard + 1);
         }
         setClickBtn(true);
     };
-const prev = () => {
-        if (indexCard === 0) {
+
+    const prev = () => {
+        if (isFirstCard) {
             setIndexCard(words.length - 1);
-            
-        } else if (indexCard > 0) {
+        } else {
             setIndexCard(indexCard - 1);
-            
-            }
-            setClickBtn(true);
+        }
+        setClickBtn(true);
     };
 
-
     const countWords = () => {
-        if (count !== words.length-1) {
+        if (count < words.length - 1) {
             setCount(count + 1);
         }
     };
 
-    const newGame = () =>{
+    const newGame = () => {
         setIndexCard(0);
         setClickBtn(true);
-        arr=[];
+        setArr([]);
         setCount(0);
-       
-    }
-
-
-
-    let stylePrevBtn = styles.nextprevbtn;
+    };
 
     return (
-        
-        
-        <div className={styles.containercard} >
-            
-            {indexCard !== 0 ? 
-            <button className={classNames(`${styles.nextprevbtn} ${styles.prev}`)} onClick={prev}>Назад</button>:''}
-            <Card 
-            id={words[indexCard].id}
-            english={words[indexCard].english}
-            transcription={words[indexCard].transcription}
-            russian={words[indexCard].russian}
-            clickBtn = {clickBtn}
-            setClickBtn = {setClickBtn}
-            countWords ={countWords}
-            arr={arr} 
-            setArr={setArr}
-            count={count}
-            />  
-            
-            {indexCard === words.length-1 ? stylePrevBtn=styles.btnCardsLengthEnd  :''}
-            {indexCard === words.length-1 ? next=disabledBtn :''}
-            
-            <button className={classNames(`${stylePrevBtn} ${styles.next}`)} onClick={next}>Вперед</button>     
-            {indexCard === words.length-1 ?<button className={classNames(`${styles.nextprevbtn} ${styles.newGame}`)} onClick={newGame}>Начать игру заново</button>:''}
-            
-                 </div>
+        <div className={styles.containercard}>
 
-    )
+            <button className={classNames(`${styles.nextprevbtn} ${isFirstCard ? styles.btnCardsLengthEnd : ''} ${styles.prev}`)}
+                onClick={prev}
+                disabled={isFirstCard}>
+                Назад
+            </button>
+
+            <Card id={words[indexCard].id}
+                english={words[indexCard].english}
+                transcription={words[indexCard].transcription}
+                russian={words[indexCard].russian}
+                clickBtn={clickBtn}
+                setClickBtn={setClickBtn}
+                countWords={countWords}
+                arr={arr}
+                setArr={setArr}
+                count={count} />
+
+            <button className={classNames(`${styles.nextprevbtn} ${isLastCard ? styles.btnCardsLengthEnd : ''} ${styles.next}`)}
+                onClick={next}
+                disabled={isLastCard}>
+                Вперед
+            </button>
+
+            {isLastCard &&
+                <button className={classNames(styles.nextprevbtn, styles.newGame)} onClick={newGame}>
+                    Начать игру заново
+                </button>
+            }
+        </div>
+    );
 }

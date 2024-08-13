@@ -2,10 +2,8 @@ import React, { useState, useContext } from 'react';
 import styles from './WordsList.module.css';
 import classNames from 'classnames';
 import { WordsContextContext } from './wordsContext';
-import words from '../../../Words.json';
 
-
-function WordsList({ id, russian, transcription, english}) {
+function WordsList({ id, russian, transcription, english }) {
 
     const [edit, setEdit] = useState(false);
 
@@ -13,23 +11,17 @@ function WordsList({ id, russian, transcription, english}) {
     const [validationEng, setValidationEng] = useState(false);
     const [validationTranscription, setValidationTranscription] = useState(false);
 
-
     const [changeRussian, setChangeRussian] = useState('');
     const [changeEnglish, setChangeEnglish] = useState('');
     const [changeTranscription, setChangeTranscription] = useState('');
 
-
     const [disabledBtn, setDisabledBtn] = useState(false);
-
 
     const [inpRedRus, setInpRedRus] = useState('');
     const [inpRedTrans, setInpRedTrans] = useState('');
     const [inpRedEng, setInpRedEng] = useState('');
 
-
     const wordsChangeContext = useContext(WordsContextContext);
-
-
 
     const handleChangeRussian = (e) => {
         const russianLetterRegex = /[а-яёА-ЯЁ]/;
@@ -39,15 +31,12 @@ function WordsList({ id, russian, transcription, english}) {
             setChangeRussian(e.target.value);
             setInpRedRus('');
             setDisabledBtn(false);
-
-
         }
         else {
             setChangeRussian('');
             setInpRedRus(styles.redCellInp);
         }
     };
-
 
     const handleChangeEnglish = (e) => {
         const englishWordRegex = /^[a-zA-Z]+$/;
@@ -57,15 +46,12 @@ function WordsList({ id, russian, transcription, english}) {
             setChangeEnglish(e.target.value);
             setInpRedEng('');
             setDisabledBtn(false);
-
         }
         else {
             setChangeEnglish('');
             setInpRedEng(styles.redCellInp);
-
         }
     };
-
 
     const handleChangeTranscription = (e) => {
         setChangeTranscription(e.target.value);
@@ -77,12 +63,7 @@ function WordsList({ id, russian, transcription, english}) {
             setValidationTranscription(true);
             setDisabledBtn(false);
         }
-
     };
-
-
-
-
 
     const checkInpWordRus = () => {
         if (!changeRussian?.length) {
@@ -93,7 +74,6 @@ function WordsList({ id, russian, transcription, english}) {
             setValidationRus(true);
         }
     }
-
 
     const checkInpWordTrans = () => {
         if (!changeTranscription?.length) {
@@ -106,29 +86,21 @@ function WordsList({ id, russian, transcription, english}) {
         }
     }
 
-
     const checkInpWordEng = () => {
         if (!changeEnglish?.length) {
             setDisabledBtn(true);
             setInpRedEng(styles.redCellInp);
-
         }
         else {
             setValidationEng(true);
-
         }
     }
-
-
 
     const checkInpWord = () => {
         checkInpWordEng();
         checkInpWordTrans();
         checkInpWordRus();
     }
-
-
-
 
     const handleChangeCancel = () => {
         setEdit(!edit);
@@ -142,23 +114,16 @@ function WordsList({ id, russian, transcription, english}) {
     };
 
     const onClickSave = () => {
-
         if (validationRus && validationTranscription && validationEng) {
             wordsChangeContext.save(changeEnglish, changeTranscription, changeRussian)
-
         }
         else {
             checkInpWord();
         }
-
-
     }
 
-
     if (edit === false) {
-
         return (
-
             <div>
                 <div className={styles.WordsList}>
                     <div className={classNames(`${styles.cell} ${styles.name}`)}>{id}
@@ -190,15 +155,12 @@ function WordsList({ id, russian, transcription, english}) {
                             <button className={classNames(`${styles.buttonDisabled} ${styles.buttonsChange}`)} onClick={checkInpWord} disabled={disabledBtn}>Save</button>
                             :
                             <button className={classNames(`${styles.buttonSave} ${styles.buttonsChange}`)} onClick={onClickSave} >Save</button>
-
                         }
                     </div>
                 </div>
             </div>
         );
-
     }
-
 };
 
 export default WordsList;
